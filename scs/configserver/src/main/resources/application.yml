@@ -1,0 +1,34 @@
+srping:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        encrypt:
+          enabled: false
+        git:
+          uri: git@github.com:tkdgns8234/spring-cloud-study.git
+          default-label: ${spring.profiles.active}
+          search-paths:
+            - 'config/{application}/{profile}/{label}/{path}'
+            - 'config/{application}/{profile}/{label}'
+            - 'config/{application}/{profile}/'
+            - 'config/{application}'
+            - 'config'
+          ignore-local-ssh-settings: true
+          private-key: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIICXgIBAAKBgQDFkdC9VvRoquPgS6ED4KlRtx3bbD7ufcuezWaksdfrZtO2IMSM
+            Ow/e6e59Yyf8kbcaSiCaCFiBz5ECwo8gqTGk/Wz4SSY/mUsKoROxIU896SKgEPRy
+            jPKEZH42WFgJCDq2eQrDF4EwDURMLgCMLVnDS4FNQC7yNTDcZZ3YEy29NwIDAQAB
+            AoGBALhOI81Nnek6aiQmSUnFvg515ct4+mgfP+GfuX4wTb3TCfMgNFqhClgoIIwm
+            APpzsL08o5ct6+sFCEDr4PtV+vFKl3EBBJD2l5hLNNt6U4gkJoLvxy5PMplsQXyL
+            MFLhWqY4rggfdJ4uudFWzM3RGpeeHxZkj4JhFZ1ogBFevsZhAkEA+Pmc47aEpM6a
+            Wdo61wq8nOKiwRKCZfZKgwMwwteOVIN3tRsfTlbuEXnQAOeGkXXuqmDF+23wZUqn
+            PjM932iCEQJBAMsk5H/oAcH43o93tTZPkOWdt9FwCu7KtnEGvrtUpWwgkPx0l5T4
+            o7oGY3fpdKHBMs2pEPc9HX8EXeeKhMSkgscCQHYAMAiI18MYnHUbhimnUA93JrYl
+            JKJYoaYIXBLsgOuzR4gRa7wAXWLw/dF/6fqFD3G23f61c2s+f5duR9Pbv1ECQQCM
+            YOomGUVdrYTez3JCHambgunLqQllCmAYqviSq2PE3JxUWJ2HLGq32kJSUtluDfv1
+            cqdusqT3aSUbI/WrjaNxAkEA0cKiPJXKbKYcLmhiJ4RDJ5qssbbyxKhCyu+tr7yh
+            p0v7583qNn6pNMohmbH2mR9YZGLPYTeRVwJlNyts/myUZQ==
+            -----END RSA PRIVATE KEY-----
