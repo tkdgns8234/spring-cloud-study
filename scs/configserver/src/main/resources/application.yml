@@ -10,11 +10,11 @@ spring:
           uri: git@github.com:tkdgns8234/spring-cloud-study.git
           default-label: ${spring.profiles.active}
           search-paths:
-            - 'config/{application}/{profile}/{label}/{path}'
-            - 'config/{application}/{profile}/{label}'
-            - 'config/{application}/{profile}/'
-            - 'config/{application}'
-            - 'config'
+            - 'scs/config/{application}/{profile}/{label}/{path}'
+            - 'scs/config/{application}/{profile}/{label}'
+            - 'scs/config/{application}/{profile}/'
+            - 'scs/config/{application}'
+            - 'scs/config'
           ignore-local-ssh-settings: true
           private-key: |
             -----BEGIN RSA PRIVATE KEY-----
