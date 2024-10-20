@@ -1,0 +1,12 @@
+spring:
+    application:
+        name: gateway
+    main:
+        allow-bean-definition-overriding: true
+    config:
+        import: optional:configserver:${CONFIGSERVER_URL}
+    cloud:
+        config:
+            uri: ${CONFIGSERVER_URI}
+
+

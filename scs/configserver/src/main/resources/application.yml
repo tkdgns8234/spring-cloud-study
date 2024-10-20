@@ -7,6 +7,7 @@ spring:
         encrypt:
           enabled: false
         git:
+          timeout: 10000 # 타임아웃을 10초로 늘림
           uri: git@github.com:tkdgns8234/spring-cloud-study.git
           default-label: ${spring.profiles.active}
           search-paths:
