@@ -1,0 +1,40 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - PATCH
+      mvc:
+        routes:
+          - id: cat
+            uri: lb://cat
+            predicates:
+              - Path=/api/v1/cats/**
+            filters:
+              - RewritePath=/api/v1/?(?<segment>.*), /$\{segment}
+
+          - id: satisfaction
+            uri: lb://cat
+            predicates:
+              - Path=/api/v1/satisfaction/**
+            filters:
+              - RewritePath=/api/v1/?(?<segment>.*), /$\{segment}
+
+          - id: butlers
+            uri: lb://butler
+            predicates:
+              - Path=/api/v1/butlers/**
+            filters:
+              - RewritePath=/api/v1/?(?<segment>.*), /$\{segment}
+
+          - id: naver
+            uri: https://www.naver.com
+            predicates:
+              - Path=/naver

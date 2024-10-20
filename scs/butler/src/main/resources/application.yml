@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: butler
+  main:
+    allow-bean-definition-overriding: true
+  config:
+    import: optional:configserver:${CONFIGSERVER_URI}
+  cloud:
+    config:
+      uri: ${CONFIGSERVER_URI}
